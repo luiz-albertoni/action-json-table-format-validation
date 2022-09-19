@@ -1,6 +1,21 @@
 require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 105:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Inputs = void 0;
+var Inputs;
+(function (Inputs) {
+    Inputs.Directory = "Directory";
+})(Inputs = exports.Inputs || (exports.Inputs = {}));
+
+
+/***/ }),
+
 /***/ 109:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -36,16 +51,43 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(186));
-const wait_1 = __nccwpck_require__(817);
+const fs = __importStar(__nccwpck_require__(747));
+const path = __importStar(__nccwpck_require__(622));
+const constants_1 = __nccwpck_require__(105);
+const utils_1 = __nccwpck_require__(316);
+/**
+ * Validate if each row
+ *
+ */
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const ms = core.getInput('milliseconds');
-            core.debug(`Waiting ${ms} milliseconds ...`); // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
-            core.debug(new Date().toTimeString());
-            yield (0, wait_1.wait)(parseInt(ms, 10));
-            core.debug(new Date().toTimeString());
-            core.setOutput('time', new Date().toTimeString());
+            const directory = core.getInput(constants_1.Inputs.Directory, { required: true });
+            const directoryPath = path.join(__dirname, '..', directory);
+            core.info(`Directory Path: ${directoryPath} ...`);
+            const fsp = fs.promises;
+            const files = yield fsp.readdir(directoryPath);
+            if (files.length === 0) {
+                core.info(`No files found on ${directoryPath}`);
+            }
+            files.forEach(function (fileName) {
+                const filePath = `${directoryPath}/${fileName}`;
+                const fileContent = fs.readFileSync(filePath);
+                let jsonArrayObject = JSON.parse(fileContent.toString());
+                if ((0, utils_1.isArray)(jsonArrayObject)) {
+                    const tableHeaders = jsonArrayObject[0];
+                    if (tableHeaders && jsonArrayObject.length > 2) {
+                        validateRows(tableHeaders, jsonArrayObject, fileName);
+                    }
+                    else {
+                        throw Error(`Error: No data on ${fileName}.`);
+                    }
+                }
+                else {
+                    throw Error(`Error: Line while reading ${fileName}, content is not an Array.`);
+                }
+            });
+            core.info(`All json files are good.`);
         }
         catch (error) {
             if (error instanceof Error)
@@ -53,38 +95,48 @@ function run() {
         }
     });
 }
+/**
+ * Given the json on the table format
+ *   [
+ *    [ "Header1", "Header2", "Header3", "Header4", "Header5", "Header6" ],
+ *    [ "row1.1",  "row1.2",  "row1.3",   "row1.4",  "row1.5",  "row1.6" ],
+ *    [ "row2.1",  "row2.2",  "row2.3",   "row2.4",  "row2.5",  "row2.6" ],
+ *    [ "row3.1",  "row3.2",  "row3.3",   "row3.4",  "row3.5",  "row3.6" ]
+ *   ]
+ * Validate the header array has the same number of items of the others rows
+ *
+ * @param {Array<string>} tableHeaders
+ * @param {Array<any>} jsonArrayObject
+ * @param {string} fileName
+ */
+function validateRows(tableHeaders, jsonArrayObject, fileName) {
+    const tableHeadersLength = tableHeaders.length;
+    for (let index = 1; index < jsonArrayObject.length; index++) {
+        if (!(0, utils_1.isArray)(jsonArrayObject[index])) {
+            throw Error(`Error: Line ${index}, json file ${fileName} is not an Array.`);
+        }
+        if (tableHeadersLength !== jsonArrayObject[index].length) {
+            throw Error(`Error: Missing one column on line ${index}, json file ${fileName} is not an Array.`);
+        }
+    }
+}
 run();
+exports.default = run;
 
 
 /***/ }),
 
-/***/ 817:
-/***/ (function(__unused_webpack_module, exports) {
+/***/ 316:
+/***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
 
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.wait = void 0;
-function wait(milliseconds) {
-    return __awaiter(this, void 0, void 0, function* () {
-        return new Promise(resolve => {
-            if (isNaN(milliseconds)) {
-                throw new Error('milliseconds not a number');
-            }
-            setTimeout(() => resolve('done!'), milliseconds);
-        });
-    });
+exports.isArray = void 0;
+function isArray(jsonELement) {
+    return Object.prototype.toString.call(jsonELement) === '[object Array]';
 }
-exports.wait = wait;
+exports.isArray = isArray;
 
 
 /***/ }),

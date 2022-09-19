@@ -1,11 +1,13 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'action-json-table-format-validation'
+description: 'Validate if Json file is on "table" format'
 inputs:
-  milliseconds: # change this
+  directory:
+    description: 'Folder which contains the json files'
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    default: 'files'
+outputs:
+  valid: # id of output
+    description: 'Boolean variable which tells if all files are valid or not'
 runs:
   using: 'node16'
   main: 'dist/index.js'

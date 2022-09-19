@@ -1,0 +1,657 @@
+[
+  [
+    "INSTITUTION",
+    "Prefecture",
+    "Municipality",
+    "DCF",
+    "del_flg",
+    "Prefecture_Ordered"
+  ],
+  [
+    "National University Corporation Asahikawa Medical University Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100017",
+    "0"
+  ],
+  [
+    "National University Corporation Hokkaido University Hospital",
+    "Hokkaido",
+    "Sapporo City Kita-ku",
+    "1101813",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Hokkaido Public University Corporation Sapporo Medical University Hospital",
+    "Hokkaido",
+    "Sapporo City Chuo-ku",
+    "1102203",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "JA Hokkaido Welfare Federation Asahikawa Welfare Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100067",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Japan Red Cross Asahikawa Red Cross Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100174",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "JA Hokkaido Welfare Solidarity Wide Welfare Hospital",
+    "Hokkaido",
+    "Obihiro City",
+    "1100659",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "JA Hokkaido Welfare Ren Amisato Welfare Hospital",
+    "Hokkaido",
+    "Sapporo City",
+    "1100279",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Iwamizawa Municipal General Hospital",
+    "Hokkaido",
+    "Iwamizawa City",
+    "1100368",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Ebetsu Municipal Hospital",
+    "Hokkaido",
+    "Ebetsu City",
+    "1100412",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Welfare Corporation Onshi Foundation Saiseikai Branch Hokkaido Saiseikai Otaru Hospital",
+    "Hokkaido",
+    "Otaru City",
+    "1100479",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Welfare Corporation Hokkaido Social Business Association Otaru Hospital",
+    "Hokkaido",
+    "Otaru City",
+    "1100495",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Otaru Municipal Hospital",
+    "Hokkaido",
+    "Otaru City",
+    "1100576",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Hokkaido Medical Corporation Obihiro Daiichi Hospital",
+    "Hokkaido",
+    "Obihiro City",
+    "1100630",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Tomatokomaki City Hospital",
+    "Hokkaido",
+    "Tomakomai City",
+    "1101080",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Nayori City General Hospital",
+    "Hokkaido",
+    "Nayori City",
+    "1101131",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "National Hospital Organization Hakodate Hospital",
+    "Hokkaido",
+    "Hakodate City",
+    "1101195",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Mother Koi Nikko Memorial Hospital",
+    "Hokkaido",
+    "Muroran City",
+    "1101553",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Steel Memorial Muroran Hospital",
+    "Hokkaido",
+    "Muroran City",
+    "1101571",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Rumoe Municipal Hospital",
+    "Hokkaido",
+    "Rume City",
+    "1101684",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Municipal Wakauchi Hospital",
+    "Hokkaido",
+    "Wakauchi City",
+    "1101717",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Japan Red Cross General Hospital Date Red Cross Hospital",
+    "Hokkaido",
+    "Date City",
+    "1101775",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Keiyukai Sapporo Hospital",
+    "Hokkaido",
+    "Sapporo City Shiraishi Ward",
+    "1102030",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Independent Administrative Institution Regional Medical Function Promotion Organization Sapporo Hokushin Hospital",
+    "Hokkaido",
+    "Sapporo City Atsubetsu-ku",
+    "1102098",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "National Public Employee Mutual Aid Association Tonan Hospital",
+    "Hokkaido",
+    "Sapporo City Chuo-ku",
+    "1102101",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Hokkaido Passenger Railway Co., Ltd. JR Sapporo Hospital",
+    "Hokkaido",
+    "Sapporo City Chuo Ward",
+    "1102156",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "East Japan Telecom Telephone Co., Ltd. NTT East Japan Sapporo Hospital",
+    "Hokkaido",
+    "Sapporo City Chuo Ward",
+    "1102204",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Independent administrative agency Regional Medical Function Promotion Organization Hokkaido Hospital",
+    "Hokkaido",
+    "Sapporo City Toyohei Ward",
+    "1102492",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Hokkaido Orthopedic Memorial Hospital",
+    "Hokkaido",
+    "Sapporo City, Toyohei-ku",
+    "1102565",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "JA Hokkaido Welfare Ren Enkari Welfare Hospital",
+    "Hokkaido",
+    "Monbetsu-gun Engarucho",
+    "1103330",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Caress Sapporo Clock Tower Memorial Hospital",
+    "Hokkaido",
+    "Sapporo City Chuo-ku",
+    "1103911",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Higashi Sapporo Hospital",
+    "Hokkaido",
+    "Sapporo City Shiraishi Ward",
+    "1103960",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Tokushukai Sapporo Tokushukai Hospital",
+    "Hokkaido",
+    "Sapporo City Atsubetsu Ward",
+    "1103993",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Sadashinkai Sapporo Sadashinkai Hospital",
+    "Hokkaido",
+    "Sapporo City Higashi-ku",
+    "1104142",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Hokuyokai Sapporo Hokuyo Hospital",
+    "Hokkaido",
+    "Sapporo City Shiraishi-ku",
+    "1104202",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Fuku Wakai Sapporo Tachibana Hospital",
+    "Hokkaido",
+    "Sapporo City Teina Ward",
+    "1104245",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Public Interest Incorporated Association Hakodate City Medical Association Hakodate City Medical Association Hospital",
+    "Hokkaido",
+    "Hakodate City",
+    "1104295",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Tokushukai Sapporo Higashi Tokushukai Hospital",
+    "Hokkaido",
+    "Sapporo City Higashi-ku",
+    "1104311",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Mikusakai Clark Hospital",
+    "Hokkaido",
+    "Sapporo City Higashi-ku",
+    "1104313",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical corporation Sapporo Yamanoue Hospital",
+    "Hokkaido",
+    "Sapporo City Nishi-ku",
+    "1104426",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Hokuto Hokuto Hospital",
+    "Hokkaido",
+    "Obihiro City",
+    "1105075",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Mother Koi Tenshi Hospital",
+    "Hokkaido",
+    "Sapporo City Higashi-ku",
+    "1107307",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Hokkaido Prefectural Children's Medical and Rehabilitation Center",
+    "Hokkaido",
+    "Sapporo City Teina Ward",
+    "1108446",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Kojinkai Kushiro Takahito Memorial Hospital",
+    "Sapporo",
+    "Kushiro City",
+    "1108481",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Kojinkai Hokkaido Ono Memorial Hospital",
+    "Hokkaido",
+    "Sapporo City Nishi-ku",
+    "1110570",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Tokushukai Kyoaikai Hospital",
+    "Hokkaido",
+    "Hakodate City",
+    "1111487",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Hakuyukai Hiragishi Hospital",
+    "Hokkaido",
+    "Akahira City",
+    "1100003",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Keisenkai Asahikawa Keisenkai Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100042",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Rejuvenation Association Onishi Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100092",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Welfare Corporation Hokkaido Nursery School",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100147",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Niekai Nakano Memorial Hospital",
+    "Hokkaido",
+    "Ashibetsu City",
+    "1100248",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Yuaikai Yuai Memorial Hospital",
+    "Hokkaido",
+    "Ebetsu City",
+    "1100395",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Hokujinkai Ishibashi Hospital",
+    "Hokkaido",
+    "Otaru City",
+    "1100517",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Yujinkai Takigawa Central Hospital",
+    "Hokkaido",
+    "Takigawa City",
+    "1100944",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Genyokai Doo Sato Hospital",
+    "Hokkaido",
+    "Tomakomai City",
+    "1101053",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Specified Medical Corporation Tomita Hospital",
+    "Hokkaido",
+    "Hakodate City",
+    "1101201",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Welfare Corporation Hokkaido Social Business Association Hakodate Hospital",
+    "Hokkaido",
+    "Hakodate City",
+    "1101304",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Hakodate Hakueikai Hakodate Watanabe Hospital",
+    "Hokkaido",
+    "Hakodate City",
+    "1101366",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical corporation Sapporo Hiraoka Hospital",
+    "Hokkaido",
+    "Sapporo City Kiyota-ku",
+    "1104441",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical corporation Sapporo Miyanosawa Hospital",
+    "Hokkaido",
+    "Sapporo City Teina Ward",
+    "1104457",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Kowakai Sapporo Shirakabadai Hospital",
+    "Hokkaido",
+    "Sapporo City Toyohei-ku",
+    "1104480",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical corporation Yujinkai Wakabadai Hospital",
+    "Hokkaido",
+    "Takigawa City",
+    "1104497",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Futabakai Asahikawa Jujo Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1104567",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Kitajukai Hospital",
+    "Hokkaido",
+    "Sapporo City, Toyohei Ward",
+    "1104619",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Shindo Asahikawa Rehabilitation Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1104637",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Sapporo Medical Corporation Heisei Sapporo Tomakomai East Hospital",
+    "Hokkaido",
+    "Sapporo Sapporo",
+    "1104675",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Houjikai Kushiro Kita Hospital",
+    "Hokkaido",
+    "Kushiro City",
+    "1104682",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Jiekai Seigaoka Hospital",
+    "Hokkaido",
+    "Date City",
+    "1106370",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Tomorrow Kaiwamizawa Asahikawa Hospital",
+    "Hokkaido",
+    "Iwamizawa City",
+    "1107214",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Seikai Narukawa Hospital",
+    "Hokkaido",
+    "Kameda-gun Nanaicho",
+    "1107689",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Tsutsujikai Sorachi Central Hospital",
+    "Hokkaido",
+    "Asahikawa-cho, Kabato-gun",
+    "1108434",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Sansokai Chitose Katsura Hospital",
+    "Hokkaido",
+    "Chitose City",
+    "1109180",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Akahikawa City Hospital",
+    "Hokkaido",
+    "Akahira City",
+    "1100011",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Ninyukai Kita Saito Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100056",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Social Medical Corporation Motoseikai Moriyama Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100136",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Shindo Shaping Surgical Shindo Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100168",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Seiryokai Fujii Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100178",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Shionkai Aikawa Memorial Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100183",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporate Dohoku Workers' Medical Association Dohoku Working Medical Association Iwamizawa Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100200",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Medical Corporation Hoseikai Toyooka Central Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100213",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Municipal Ashibetsu Hospital",
+    "Hokkaido",
+    "Ashibetsu City",
+    "1100269",
+    "0",
+    "01 Hokkaido"
+  ],
+  [
+    "Hokkaido Koyogaoka Hospital",
+    "Hokkaido",
+    "Asahikawa",
+    "1100284",
+    "0",
+    "01 Hokkaido"
+  ]
+]

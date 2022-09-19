@@ -1,0 +1,27 @@
+[
+  [
+    "INSTITUTION",
+    "Prefecture",
+    "Municipality",
+    "DCF",
+    "del_flg",
+    "Prefecture_Ordered"
+  ],
+  [
+    "National University Corporation Asahikawa Medical University Hospital",
+    "Hokkaido",
+    "Asahikawa City",
+    "1100017",
+    "1100017",
+    "0"
+  ],
+  {},
+  [
+    "Hokkaido Public University Corporation Sapporo Medical University Hospital",
+    "Hokkaido",
+    "Sapporo City Chuo-ku",
+    "1102203",
+    "0",
+    "01 Hokkaido"
+  ]
+]
