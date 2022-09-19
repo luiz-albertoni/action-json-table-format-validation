@@ -1,10 +1,7 @@
 import * as core from '@actions/core'
-import * as process from 'process'
-import * as cp from 'child_process'
-import * as path from 'path'
 import run from "../src/main";
 import { Inputs } from "../src/constants";
-import * as testUtils from "../src/utils/testUtils"
+import * as testUtils from "../src/utils/test"
 
 describe('Check Json format has table format', () => {
 

@@ -56,16 +56,16 @@ const path = __importStar(__nccwpck_require__(622));
 const constants_1 = __nccwpck_require__(105);
 const utils_1 = __nccwpck_require__(316);
 /**
- * Validate if each row
- *
+ * Validate if all files under a given folder
+ * have the json 'table' format
  */
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const directory = core.getInput(constants_1.Inputs.Directory, { required: true });
             const directoryPath = path.join(__dirname, '..', directory);
-            core.info(`Directory Path: ${directoryPath} ...`);
             const fsp = fs.promises;
+            core.info(`Directory Path: ${directoryPath} ...`);
             const files = yield fsp.readdir(directoryPath);
             if (files.length === 0) {
                 core.info(`No files found on ${directoryPath}`);
@@ -133,6 +133,7 @@ exports.default = run;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.isArray = void 0;
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 function isArray(jsonELement) {
     return Object.prototype.toString.call(jsonELement) === '[object Array]';
 }
