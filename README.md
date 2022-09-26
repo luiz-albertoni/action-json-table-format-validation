@@ -52,9 +52,10 @@ $ npm test
       runs-on: ubuntu-latest
       name: Using the json table validation
       steps:
+        - uses: actions/checkout@v2
         - name: Json table format validation
           id: hello
-          uses: octocat/action-json-table-format-validation@v1.0
+          uses: luiz-albertoni/action-json-table-format-validation@v1.0
           with:
             directory: 'files'
 ```
