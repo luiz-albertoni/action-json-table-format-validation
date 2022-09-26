@@ -16,7 +16,7 @@ async function run(): Promise<void> {
     const directoryPath = `${wd}/${directory}`;
     const fsp = fs.promises;
 
-    core.info(`Directory Path: ${directoryPath} ...`);
+    core.info(`Directory Path: ${directoryPath}`);
     const files = await fsp.readdir(directoryPath);
 
     if (files.length === 0) {
@@ -26,6 +26,7 @@ async function run(): Promise<void> {
     files.forEach(function (fileName) {
       const filePath = `${directoryPath}/${fileName}`;
       const fileContent = fs.readFileSync(filePath);
+      core.info(`Checking ${fileName} ...`);
 
       let jsonArrayObject = JSON.parse(fileContent.toString());
       if (isArray(jsonArrayObject)) {
