@@ -69,7 +69,6 @@ function run() {
             const directory = core.getInput(constants_1.Inputs.Directory, { required: true });
             const testPath = path.join(__dirname, '..');
             const wd = process.env[`GITHUB_WORKSPACE`] || testPath;
-            core.info(`wd Path: ${wd}/${directory} ...`);
             const directoryPath = `${wd}/${directory}`;
             const fsp = fs.promises;
             core.info(`Directory Path: ${directoryPath} ...`);
