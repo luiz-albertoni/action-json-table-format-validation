@@ -11,6 +11,8 @@ import { isArray } from "./utils/utils"
 async function run(): Promise<void> {
   try {
     const directory: string = core.getInput(Inputs.Directory, { required: true })
+    const wd: string = process.env[`GITHUB_WORKSPACE`] || "";
+    core.info(`wd Path: ${wd} ...`);
     const directoryPath = path.join(__dirname, '..', directory);
     const fsp = fs.promises;
 

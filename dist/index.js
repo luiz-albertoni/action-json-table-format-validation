@@ -67,6 +67,8 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const directory = core.getInput(constants_1.Inputs.Directory, { required: true });
+            const wd = process.env[`GITHUB_WORKSPACE`] || "";
+            core.info(`wd Path: ${wd} ...`);
             const directoryPath = path.join(__dirname, '..', directory);
             const fsp = fs.promises;
             core.info(`Directory Path: ${directoryPath} ...`);
