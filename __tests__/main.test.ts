@@ -15,7 +15,7 @@ describe('Check Json format has table format', () => {
     const failedMock = jest.spyOn(core, "setFailed");
     await run();
     expect(failedMock).toHaveBeenCalledWith(
-      "Error: Missing one column on line 1, json file test.json is not an Array."
+      "Error: Missing one column on line 1, json file test.json."
     );
   });
 
@@ -45,5 +45,5 @@ describe('Check Json format has table format', () => {
       "Error: Line 2, json file test.json is not an Array."
     );
   });
-});
 
+});

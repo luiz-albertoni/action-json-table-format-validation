@@ -88,7 +88,12 @@ function run() {
  */
 function findFiles(directoryPath) {
     fs.readdirSync(directoryPath).forEach(fileName => {
+        if (/^\..*/.test(fileName)) {
+            core.info(`Ignoring hidden file: ${directoryPath}/${fileName}`);
+            return;
+        }
         let fullPath = path.join(directoryPath, fileName);
+        core.info(`Directory fullPath: ${fullPath}`);
         if (fs.lstatSync(fullPath).isDirectory()) {
             findFiles(fullPath);
         }
@@ -141,7 +146,7 @@ function validateRows(tableHeaders, jsonArrayObject, fileName) {
             throw Error(`Error: Line ${index}, json file ${fileName} is not an Array.`);
         }
         if (tableHeadersLength !== jsonArrayObject[index].length) {
-            throw Error(`Error: Missing one column on line ${index}, json file ${fileName} is not an Array.`);
+            throw Error(`Error: Missing one column on line ${index}, json file ${fileName}.`);
         }
     }
 }

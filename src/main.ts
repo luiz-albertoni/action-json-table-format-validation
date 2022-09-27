@@ -34,7 +34,13 @@ async function run(): Promise<void> {
  */
 function findFiles(directoryPath: string) {
   fs.readdirSync(directoryPath).forEach(fileName => {
+    if (/^\..*/.test(fileName)) {
+      core.info(`Ignoring hidden file: ${directoryPath}/${fileName}`);
+      return;
+    }
     let fullPath = path.join(directoryPath, fileName);
+
+    core.info(`Directory fullPath: ${fullPath}`);
     if (fs.lstatSync(fullPath).isDirectory()) {
       findFiles(fullPath);
     } else {
@@ -87,7 +93,7 @@ function validateRows(tableHeaders: Array<string>, jsonArrayObject: Array<any>, 
     }
 
     if (tableHeadersLength !== jsonArrayObject[index].length) {
-      throw Error(`Error: Missing one column on line ${index}, json file ${fileName} is not an Array.`);
+      throw Error(`Error: Missing one column on line ${index}, json file ${fileName}.`);
     }
   }
 }
