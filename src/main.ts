@@ -14,37 +14,55 @@ async function run(): Promise<void> {
     const testPath = path.join(__dirname, '..');
     const wd: string = process.env[`GITHUB_WORKSPACE`] || testPath;
     const directoryPath = `${wd}/${directory}`;
-    const fsp = fs.promises;
 
     core.info(`Directory Path: ${directoryPath}`);
-    const files = await fsp.readdir(directoryPath);
 
-    if (files.length === 0) {
-      core.info(`No files found on ${directoryPath}`);
-    }
+    findFiles(directoryPath);
 
-    files.forEach(function (fileName) {
-      const filePath = `${directoryPath}/${fileName}`;
-      const fileContent = fs.readFileSync(filePath);
-      core.info(`Checking ${fileName} ...`);
-
-      let jsonArrayObject = JSON.parse(fileContent.toString());
-      if (isArray(jsonArrayObject)) {
-        const tableHeaders = jsonArrayObject[0];
-        if (tableHeaders && jsonArrayObject.length > 2) {
-          validateRows(tableHeaders, jsonArrayObject, fileName);
-        } else {
-          throw Error(`Error: No data on ${fileName}.`);
-        }
-      } else {
-        throw Error(`Error: Line while reading ${fileName}, content is not an Array.`);
-      }
-    });
     core.info(`All json files are good.`);
 
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }
+}
+
+/**
+ * Find files on all directories and subdirectories
+ * and call the validation method
+ *
+ * @param {string} directoryPath
+ */
+function findFiles(directoryPath: string) {
+  fs.readdirSync(directoryPath).forEach(fileName => {
+    let fullPath = path.join(directoryPath, fileName);
+    if (fs.lstatSync(fullPath).isDirectory()) {
+      findFiles(fullPath);
+    } else {
+      validateJson(fileName, fullPath);
+    }
+  });
+}
+
+/**
+ * Check if json content is valid 
+ *
+ * @param {string} fileName
+ * @param {string} filePath
+ */
+function validateJson(fileName: string, filePath: string) {
+  const fileContent = fs.readFileSync(filePath);
+  let jsonArrayObject = JSON.parse(fileContent.toString());
+  if (isArray(jsonArrayObject)) {
+    const tableHeaders = jsonArrayObject[0];
+    if (tableHeaders && jsonArrayObject.length > 2) {
+      validateRows(tableHeaders, jsonArrayObject, fileName);
+    } else {
+      throw Error(`Error: No data on ${fileName}.`);
+    }
+  } else {
+    throw Error(`Error: Line while reading ${fileName}, content is not an Array.`);
+  }
+  core.debug(`File ${fileName} is valid.`);
 }
 
 /**

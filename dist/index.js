@@ -70,29 +70,8 @@ function run() {
             const testPath = path.join(__dirname, '..');
             const wd = process.env[`GITHUB_WORKSPACE`] || testPath;
             const directoryPath = `${wd}/${directory}`;
-            const fsp = fs.promises;
-            core.info(`Directory Path: ${directoryPath} ...`);
-            const files = yield fsp.readdir(directoryPath);
-            if (files.length === 0) {
-                core.info(`No files found on ${directoryPath}`);
-            }
-            files.forEach(function (fileName) {
-                const filePath = `${directoryPath}/${fileName}`;
-                const fileContent = fs.readFileSync(filePath);
-                let jsonArrayObject = JSON.parse(fileContent.toString());
-                if ((0, utils_1.isArray)(jsonArrayObject)) {
-                    const tableHeaders = jsonArrayObject[0];
-                    if (tableHeaders && jsonArrayObject.length > 2) {
-                        validateRows(tableHeaders, jsonArrayObject, fileName);
-                    }
-                    else {
-                        throw Error(`Error: No data on ${fileName}.`);
-                    }
-                }
-                else {
-                    throw Error(`Error: Line while reading ${fileName}, content is not an Array.`);
-                }
-            });
+            core.info(`Directory Path: ${directoryPath}`);
+            findFiles(directoryPath);
             core.info(`All json files are good.`);
         }
         catch (error) {
@@ -100,6 +79,46 @@ function run() {
                 core.setFailed(error.message);
         }
     });
+}
+/**
+ * Find files on all directories and subdirectories
+ * and call the validation method
+ *
+ * @param {string} directoryPath
+ */
+function findFiles(directoryPath) {
+    fs.readdirSync(directoryPath).forEach(fileName => {
+        let fullPath = path.join(directoryPath, fileName);
+        if (fs.lstatSync(fullPath).isDirectory()) {
+            findFiles(fullPath);
+        }
+        else {
+            validateJson(fileName, fullPath);
+        }
+    });
+}
+/**
+ * Check if json content is valid
+ *
+ * @param {string} fileName
+ * @param {string} filePath
+ */
+function validateJson(fileName, filePath) {
+    const fileContent = fs.readFileSync(filePath);
+    let jsonArrayObject = JSON.parse(fileContent.toString());
+    if ((0, utils_1.isArray)(jsonArrayObject)) {
+        const tableHeaders = jsonArrayObject[0];
+        if (tableHeaders && jsonArrayObject.length > 2) {
+            validateRows(tableHeaders, jsonArrayObject, fileName);
+        }
+        else {
+            throw Error(`Error: No data on ${fileName}.`);
+        }
+    }
+    else {
+        throw Error(`Error: Line while reading ${fileName}, content is not an Array.`);
+    }
+    core.debug(`File ${fileName} is valid.`);
 }
 /**
  * Given the json on the table format
