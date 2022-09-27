@@ -55,7 +55,7 @@ $ npm test
         - uses: actions/checkout@v2
         - name: Json table format validation
           id: hello
-          uses: luiz-albertoni/action-json-table-format-validation@v1.0
+          uses: luiz-albertoni/action-json-table-format-validation@v1.1
           with:
             directory: 'files'
 ```
